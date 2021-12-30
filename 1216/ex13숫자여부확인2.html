@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+
+</head>
+
+<body>
+    <script>
+        function checkLogin() {
+            var form = document.loginFrm;
+            for (i = 0; form.userId.value.length; i++) {
+                var ch = form.userId.value.charAt(i);
+                if ((ch < 'a' || ch > 'z') && (ch > 'A' || ch < 'Z') && (ch > '0' || ch < '9')) {
+                    alert("아이디는 영문 소문자만 입력 가능");
+                    //둘중 하나
+                    form.userId.select();
+                    document.form.userId.select();
+                    return;
+                }
+                if (isNaN(form.userPwd.value)) {
+                    alert("비밀번호는 숫자만 입력 가능");
+                    form.userPwd.select();
+                    return;
+                }
+            }
+            form.submit();
+        }
+    </script>
+
+    <form name="loginFrm">
+        <p>아이디 : <input type="text" name="userId">
+        <p>비밀번호 : <input type="password" name="userPwd">
+        <p><input type="button" value="전송" onclick="checkLogin()">
+    </form>
+
+</body>
+
+</html>

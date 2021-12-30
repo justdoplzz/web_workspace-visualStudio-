@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    $& : 일치하는 문자열
+    $` : 일치하는 부분의 앞부분 문자열
+    $' : 일치하는 부분의 뒷부분 문자열
+    $1,$2,$3 : 그룹
+
+    <!-- <script>
+        var regExp = /a/;         //첫번쨰 만난 a에만 적용
+        // var regExp=/a/g;     //모든 a에 적용
+        var string = 'Javascript jquery Ajax';
+        var output = string.replace(regExp, '+$&+');
+        alert(output);
+    </script> -->
+
+
+    <script>
+        var regExp = /(a)(v)(a)/;
+        var string = "Javascript jquery Ajax";
+        var output = string.replace(regExp, '+$1=$2=$3+');
+        alert(output);
+    </script>
+
+</body>
+
+</html>

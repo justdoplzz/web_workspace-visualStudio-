@@ -1,0 +1,36 @@
+<!-- data.html 과 짝꿍 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="target" style="width : 500px; height:500px; border: solid;"></div>
+    <button type="button" onclick="getFromServer()">GET DATA</button>
+
+    <script>
+        function getFromServer() {
+            var request;
+            if (window.XMLHttpRequest) {
+                request = new XMLHttpRequest();
+            } else {
+                request = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            request.onreadystatechange = function () {  //onreadystatechange : XMLHttpRequest객체의 readyState프로퍼티 값이 변할 때마다 자동으로 호출되는 함수를 설정
+                if (request.readyState == 4 && request.status == 200) {  //4=done,요청한 데이터의 처리가 완료되어 응답할 준비가 완료됨 //200:서버에 문서가 존재함
+                    document.getElementById("target").innerHTML = request.responseText;
+                }
+            }
+            request.open("GET", "data.html", false);
+            request.send();
+        }
+    </script>
+</body>
+
+</html>

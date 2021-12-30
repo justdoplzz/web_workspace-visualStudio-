@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+    <!-- <script>
+        window.open('http://google.com','child','width=400,height=250', true);
+    </script> -->
+
+
+
+    <!-- <script>
+        var child = window.open('','','width=300, height=200');
+        child.document.write('<h1>From Parent Window</h1>');
+    </script> -->
+
+
+    <script>
+        var child = window.open('','', 'width=300, height=200');
+        child.moveTo(0,0);
+        setInterval(function(){
+            child.moveBy(10,10);
+        },1000);
+    </script>
+
+
+</body>
+</html>

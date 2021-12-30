@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+
+<body>
+
+    test() : 매개변수 값이 정규 표현식과 일치하는 문자열이 있는지 판단하여 true/false 반환
+    <script>
+        var regExp = /script/;
+        var string = 'javascript jquery Ajax';
+        var output = regExp.test(string);
+        alert(output);
+    </script><br>
+
+    exec() : 매개 변수 값이 정규 표현식과 일치하는 문자열을 추출하여 반환
+    <!-- <script>
+        function checkForm() {
+            var regExp = /Java/i;   //var regExp = new RegExp('java','i')
+            var str = document.frm.title.value;
+            var result = regExp.exec(str);
+            alert(result[0]);
+        } 
+    </script>-->
+
+    <form name="frm">
+        <p>제목 : <input type="text" name="title">
+        <p><input type="button" value="전송" lo onclick="checkForm()">
+    </form>
+</body>
+
+</html>

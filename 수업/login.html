@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y아카데미</title>
+    <style>
+        body{
+            /* background-image: url("images/bg-login.jpg"); */
+            background-color:white;
+        }
+        fieldset {
+            text-align: center;
+            border-color:black;
+            width : 100px;
+            margin: 0 auto;
+            margin-top: 10%;
+            padding-bottom: 50px;
+        }
+
+        input {
+            block-size: 30px;
+            width:230px;
+            height: 50px;
+            border-color: white;
+            background: transparent;
+            color:black;
+            border-radius: 10px;
+            box-shadow: 3px 3px 3px 3px gray;
+        }
+        
+        .btn_login{
+            background-color: #b54e00;
+         
+        }
+
+    </style>
+</head>
+<body>
+    <fieldset >
+        <form method="post">
+            <div>
+                <img src="images/YLogo.png" width="360" height="270" />
+            </div>
+            <input type="text" placeholder="아이디를 입력하세요."  autocomplete="off"/><br><br>
+            <input type="password" placeholder="비밀번호를 입력하세요."/><br><br>
+            <input class="btn_login" type="submit" value="로그인"/><br><br>
+            <input class="btn_login" type="submit" value="회원가입"/>
+        </form>
+    </fieldset>
+</body>
+</html>

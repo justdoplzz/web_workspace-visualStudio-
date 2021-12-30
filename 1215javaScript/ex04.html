@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 속성조작 -->
+    <script>
+        window.onload = function () {
+            //속성을 지정
+            document.body.setAttribute('data-custom', 'value');
+            //속성을 추출
+            var dataCustom = document.body.getAttribute('data-custom');
+            alert(dataCustom);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <!-- 객체 선택 및 조작 -->
+    <script>
+        $(document).ready(function () {
+            //스타일 속성을 변경
+            $('h1').css('color', 'red');
+            $('h1').css('background', 'black');
+        });
+    </script>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+
+
+    <!-- 속성 추출 -->
+    <script>
+        $(document).ready(function () {
+            //속성을 추출  (attr=attribute)
+            var src = $('script').attr('src');
+            alert(src);
+        });
+    </script>
+
+
+
+
+    <!-- 이미지 태그 -->
+    <script>
+        $(document).ready(function () {
+            //속성을 지정
+            $('img').attr('alt', '속성 지정 연습');
+            $('img').attr('src', '../images/mmm.jpg');
+            $('img').attr('width', '100');
+        })
+    </script>
+    <img id='img'>
+
+
+
+    <!-- 다양한 속성 지정1 -->
+    <script>
+        $(document).ready(function () {
+            //객체를 이용한 속성 지정
+            $('img2').attr({
+                alt: '속성지정연습',
+                src: '../images/mama.jpg',
+                width: 100
+            })
+        })
+    </script>
+      <img id='img2'>
+
+
+
+    <!-- 다양한 속성 지정2 -->
+    <script>
+        $(document).ready(function () {
+            //객체를 이용한 속성 지정
+            $('img').attr({
+                alt: '속성 지정 연습',
+                src: function (index) {
+                    var size = (index + 1) * 100;
+                    return 'http://placehold.it/' + size + 'x100';
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

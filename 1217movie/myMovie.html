@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script src="jquery-3.6.0.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            height: 100%;
+            overflow: hidden;
+            background: url('images/background.jpg');
+            background-size: cover;
+        }
+
+        body {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* 정중앙 */
+            margin-left: -480px;
+            margin-top: -275px;
+            /* margin-left: -720px;	margin-top: -275px; */
+            width: 960px;
+            height: 550px;
+            background: url('images/ma_padding.jpg');
+            background-size: cover;
+
+        }
+
+        #container {
+            position: relative;
+            width: 100%;
+            padding: 0 40px;
+            margin-left: -40px;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        div[data-name] {
+            position: absolute;
+            left: 40px;
+            top: 550px;
+            width: 960px;
+            height: 500px;
+            transition-duration: 2s;
+        }
+
+        div[data-name].active {
+            top: 0;
+        }
+
+        div[data-name=main]>img {
+            position: absolute;
+        }
+
+        /* information style */
+        div[data-name=information]>div{
+            position: absolute;
+            left: 450px;
+            top: 30px;
+            width: 480px;
+            color: white;
+            font-size: 1.2em;
+        }
+
+/* 캐릭터 style */
+        div[data-name=character]>a{
+            /* 크기설정 */
+            display: block;
+            width: 39px;
+            height: 39px;
+            /* 이미지 설정 및 글자 안보이게 */
+            text-indent: -9999px;
+            background: url("images/arrowImage.png");
+        }
+
+        div[data-name=character]>a:nth-child(1){
+            /* 스프라이트 이미지 설정 */
+            background-position: 0px 0px;
+            /* 위치 설정 */
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            margin-top: -20px;
+        }
+        div[data-name=character]>a:nth-child(2){
+            background-position: 0px -39px;
+            /* 위치 설정 */
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -20px;
+        }
+
+        div[data-name=character]>article{
+            width: 960px;
+            height: 500px;
+            position: absolute;
+            left: 0;
+            top: 500px;
+            transition-duration: 2s;
+        }
+        div[data-name=character]>article.show{top: 0;}
+        article{position: relative;}
+        article>h1{
+            /* 위치설정 */
+            position: absolute;
+            left: 90px;
+            top: 60px;
+            /* 크기 설정 */
+            font-size: 30px;
+            color: white;
+        }
+        article>img{
+            /* 위치설정 */
+            position: absolute;
+            left: 100px;
+            top: 120px;
+            width: 300px;
+            /* 그림자 설정 */
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0px;
+        }
+        article>p{
+            /* 위치 설정 */
+            position: absolute;
+            left: 480px;
+            top: 110px;
+            color: white;
+            font-size: 1.4em;
+            /* 크기 설정 */
+            width: 420px;
+        }
+        /* a태그의 속성을 article보다 높게 */
+        a{z-index: 9999;}   
+
+        /* multimedia  style */
+        div[data-name=multimedia]{
+            padding: 10px;
+        }
+    
+        #main_navigation>ul {
+            overflow: hidden;
+        }
+
+        #main_navigation>ul>li {
+            float: left;
+        }
+
+        #main_navigation>ul>li>a {
+            display: block;
+            width: 240px;
+            height: 50px;
+            line-height: 50px;
+            text-indent: -9999px;
+            background: url('images/navigation_button.png');
+        }
+
+        #main_navigation>ul>li:nth-child(1)>a {
+            background-position: 0px 0px;
+        }
+
+        #main_navigation>ul>li:nth-child(2)>a {
+            background-position: 0px -100px;
+        }
+
+        #main_navigation>ul>li:nth-child(3)>a {
+            background-position: 0px -200px;
+        }
+
+        #main_navigation>ul>li:nth-child(4)>a {
+            background-position: 0px -300px;
+        }
+
+        #main_navigation>ul>li:nth-child(1)>a:hover {
+            background-position: 0px -50px;
+        }
+
+        #main_navigation>ul>li:nth-child(2)>a:hover {
+            background-position: 0px -150px;
+        }
+
+        #main_navigation>ul>li:nth-child(3)>a:hover {
+            background-position: 0px -250px;
+        }
+
+        #main_navigation>ul>li:nth-child(4)>a:hover {
+            background-position: 0px -350px;
+        }
+
+        #title {
+            position: absolute;
+            left: 0;
+            top: -48px;
+            width: 240px;
+            height: 48px;
+            overflow: hidden;
+        }
+
+        #title>h1 {
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 240px;
+            height: 48px;
+            background: url('images/titles.png');
+            opacity: 1.0;
+            text-indent: -9999px;
+            transition-duration: 1s;
+        }
+
+        #title>h1.active {
+            top: 0;
+        }
+
+        #title>h1:nth-child(1) {
+            background-position: 0px 0px;
+        }
+
+        #title>h1:nth-child(2) {
+            background-position: 0px -50px;
+        }
+
+        #title>h1:nth-child(3) {
+            background-position: 0px -98px;
+        }
+    </style>
+</head>
+
+<body>
+    <hgroup id="title">
+        <h1 data-name="information">Information</h1>
+        <h1 data-name="character">Character</h1>
+        <h1 data-name="multimedia">Multimedia</h1>
+    </hgroup>
+
+    <section id="container">
+        <div id="main" data-name="main" class="active"></div>
+            <!-- <img src="images/mama.jpg" width="100%" opacity="0.5"> -->
+        <div id="information" data-name="information">
+            <img src="images/ma_chicken.jpg" width="50%" />
+            <div class="description">
+                <p>마찌에 대한 설명이지만 시간상 대체글을 첨부합니다<br>별빛이 가을 옥 묻힌 가을로 부끄러운 하나에 있습니다. 하나에 하나에 이네들은 별 토끼, 하나에 쓸쓸함과 가을 이국 있습니다. 별 된 그리고 별 말 헤일 걱정도 하나에 이름과, 거외다. 아무 아직 노루, 어머님, 이제 마디씩 있습니다. 소학교 된 어머니 이국 벌써 나는 하나에 별 까닭입니다. 둘 부끄러운 무엇인지 있습니다. 그러나 이 못 어머니, 별빛이 부끄러운 봅니다. 노새, 별 경, 헤일 패, 있습니다. 하늘에는 어머니, 멀리 별빛이 까닭입니다. 어머니 멀리 이름을 슬퍼하는 까닭입니다.
+
+                    별 우는 잔디가 부끄러운 딴은 그리고 묻힌 노루, 까닭입니다. 때 가득 이제 하늘에는 하나의 봅니다. 다하지 쉬이 무덤 벌레는 하나에 너무나 아이들의 부끄러운 있습니다. 같이 프랑시스 가득 아스라히 어머니, 별 봅니다. 풀이 어머님, 별이 무성할 하나에 마리아 같이 있습니다. 무덤 쉬이 부끄러운 봅니다. 가을로 별 쉬이 이런 이름과 별 둘 나는 있습니다. 새워 당신은 걱정도 그리워 하나 별이 북간도에 별에도 써 봅니다. 잠, 우는 까닭이요, 덮어 못 벌레는 이름을 봅니다. 아직 쉬이 오면 가슴속에 아스라히 언덕 까닭입니다. 아름다운 마디씩 같이 봅니다.</p>
+            </div>
+        </div>
+        <div id="character" data-name="character">
+            <a href="#">Left Button</a> <a href="#">Right Button</a>
+
+            <article class="show">
+                <h1>복슬복슬 마찌</h1>
+                <img src="images/mapretty.jpg" width="50%">
+                <p>털이 복슬복슬 자란 마찌입니다 </p>
+            </article>
+            <article>
+
+                <h1>산타마찌</h1>
+                <img src="images/ma_santa.jpg" width="50%">
+                <p>미용하고서 산타 코스프레를 한 마찌입니다</p>
+            </article>
+
+            <article>
+                <h1>웰컴 마찌</h1>
+                <img src="images/ma_welcome.jpg" width="50%">
+                <p>집에 들어온 누나를 반겨주는 마찌</p>
+            </article>
+
+        </div>
+        
+
+
+        <div id="multimedia" data-name="multimedia">
+            <video src="videos/eating.mp4" width="940" height="480" controls="controls"></video>
+        </div>
+    </section>
+    <nav id="main_navigation">
+        <ul>
+            <li><a href="#" data-target="information">Movie Info</a></li>
+            <li><a href="#" data-target="character">Character</a></li>
+            <li><a href="#" data-target="multimedia">Multimedia</a></li>
+            <li><a href="#">Download</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        $(document).ready(function () {
+            //내비게이션 버튼 클릭
+            $('#main_navigation a').click(function () {
+                var target = $(this).attr('data-target');
+                alert(target);
+                $(':not([data-name=' + target + '])').removeClass('active');
+                $('[data-name=' + target + ']').addClass('active');
+            });
+            //캐릭터 이동 버튼
+            //캐릭터 이동버튼 구현
+                var currentPosition =1;
+                $('#character>a:nth-child(1)').click(function(){
+                    currentPosition -=1;
+                    if(currentPosition<1){
+                        currentPosition=3;
+                    }
+                    $('article').removeClass('show');
+                    $('article:nth-of-type('+currentPosition+')').addClass('show');
+                });
+            
+                $('#character>a:nth-child(2)').click(function(){
+                    currentPosition +=1;
+                    if(currentPosition>3){
+                        currentPosition=1;
+                    }
+                    $('article').removeClass('show');
+                    $('article:nth-of-type('+currentPosition+')').addClass('show');
+                }); //$(document).ready 내부에
+        });
+    </script>
+
+    
+    <script> 
+    </script>
+
+</body>
+
+</html>

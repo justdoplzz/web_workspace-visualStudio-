@@ -1,0 +1,34 @@
+<!-- 2021.12.20 수업시작 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- csv는 파일형태가 아니기 때문에 변수로 저장하고 출력하게 됨. -->
+    <script>
+        var input = '';
+        input += '시군구,의료기관명,진료과수,병상수,전화번호,주소,국민안심병원 여부,감염병전담기관 여부,감염병전담기관 외래진료 Y여부\n';
+        input += '강원도 강릉시,강릉동인병원,21,608,033)651-6167,강원도 강릉시 강릉대로419번길 42 (포남동),,,\n';
+        input += '강원도 강릉시,박정빈외과의원,1,0,033)643-0080,강원도 강릉시 경강로2109,,,\n';
+        input = input.split('\n');
+        var output = '<table border="1" style="border-collapse:collapse">';
+        for (var i = 0; i < input.length - 1; i++) {
+            input[i] = input[i].split(',');
+            output += '<tr>';
+            for (var j = 0; j < input[i].length; j++) {
+                output += '<td>'; output += input[i][j].trim(); output += '</td>';
+            }
+            output += '</tr>';
+        }
+        output += '</table>';
+        document.body.innerHTML += output;
+    </script>
+</body>
+
+</html>

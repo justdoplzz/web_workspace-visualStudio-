@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First HTML</title>
+</head>
+
+<body>
+    Yesterday is <strong>history</strong>. <br />
+    Tomorrow is <em>mystery</em>.
+    <p>Today is a <b>gift</b>.
+        That's why &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; it's called the <i>present</i>....</p>
+    ok<sup>ok</sup> ok ok <sub>ok</sub> ok
+    <p></p>
+    wow <> ""
+
+        <hr>
+        <h1>분식 메뉴 </h1>
+        <hr> <!-- 수평선으로 줄 그어줌 -->
+        <h2> 어! 김떡순 12000원</h2>
+        <p> 어묵 +김밥 + 떡볶이+순대 </p>
+        <h2> 떡취순 10000원</h2>
+        <p> 떡볶이+튀김+ 순대</p>
+
+        <hr>
+        <ruby>
+            <sapn> 大韓民國 </sapn>
+            <rt> 대한민국 </rt>
+        </ruby>
+        <hr>
+
+        <!-- 번호없는리스트 unordered list -->
+        <ul>
+            <li>어! 김떡순 12000원</li>
+            <li>떡튀순 10000원</li>
+        </ul>
+
+        <!-- 번호있는리스트 ordered list-->
+        <ol>
+            <li>어! 김떡순 12000원</li>
+            <li>떡튀순 10000원</li>
+        </ol>
+        <hr>
+
+        <!-- 정의 리스트 definition list -->
+        <dl>
+            <dt>어! 김떡순 12000원</dt>
+            <dd>어묵+김밥+떡볶이+순대</dd>
+            <!--<dd>는 들여쓰기-->
+            <dt>떡튀순 10000원</dt>
+            <dd>떡볶이+튀김+순대</dd>
+        </dl>
+
+        <hr>
+        <!-- **링크 -->
+
+        <!-- 절대경로 : 나를 기준으로 옮겨짐 -->
+        <!-- _self : 기존에 있는 페이지에서 구글로 감 -->
+        <a href="http://www.google.com" target="_self"> 방문 1</a> <br />
+
+        <!-- 상대경로-->
+        <!-- _blank : 윈도우가 새로 생기면서 구글로 감 -->
+        <a href="http://www.google.com" target="_blank"> 방문 2</a> <br />
+
+        <!--다운로드 링크 (절대경로이기 때문에 기존페이지에서 다운로드됨)  -->
+        <a href="http://127.0.0.1:5500/images/마찌.jpg">마찌 파일 다운로드</a> <br />
+
+        <!-- 이메일 링크 -->
+        <a href="mailto:smy4test@gmail.com?subject=Feedback">emialMe</a> <br />
+
+
+
+        <!-- **이미지 -->
+        <img src="images/마찌.jpg" border="3" width="400" height="300" alt="해당 이미지없음ㅠㅠ">
+        <!--상대경로 : 이미지위치도 알려줘야됨 (./images~이렇게 적어도됨)-->
+        <img src="images/마.jpg" alt="해당 이미지없음ㅠㅠ">
+
+
+        <!-- **테이블 -->
+        <table border="1">
+            <caption>등장인물</caption>
+            <tr>
+                <!-- tr: 열추가-->
+                <th>아이디</th>
+                <!--테이블 헤더정의 (볼드체,중앙정렬)-->
+                <th>이름</th>
+                <th>소속</th>
+            </tr>
+            <tr>
+                <td>mazzi</td>
+                <!--td: 행추가-->
+                <td>마찌</td>
+                <td rowspan="2">마찌 house</td>
+            </tr>
+            <tr>
+                <td>motti</td>
+                <td>모티</td>
+            </tr>
+            <tr>
+                <td colspan="3">열병합</td>
+            </tr>
+
+        </table>
+
+        <table border="1">
+            <tr>
+                <td width="50%">
+                    <ul>
+                        <li>리스트1</li>
+                        <li>리스트2</li>
+                    </ul>
+                </td>
+                <td>
+                    <ol>
+                        <li>리스트3</li>
+                        <li>리스트4</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>어떤 마찌든 ok!</p>
+                </td>
+                <td><img border="1" src=images/마찌.jpg width="300" alt="마찌" </td>
+            </tr>
+        </table>
+
+        <table border="1">
+            <caption>Caption</caption>
+            <colgroup>
+                <col span="2" style="background-color: red" />
+                <col style="background-color: blue" />
+                </colorgroup>
+            <thead style="background-color:greenyellow">
+                <tr>
+                    <th>Table Header</th>
+                    <th>Table Header</th>
+                    <th>Table Header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Table data</td>
+                    <td>Table data</td>
+                    <td>Table data</td>
+                </tr>
+            </tbody>
+            <tfoot style="backgound-color: rgb(228,228,82)">
+                <tr>
+                    <td>Table data</td>
+                    <td>Table data</td>
+                    <td>Table data</td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!--연습문제-->
+        <br><br><br>
+
+        <h1>My home</h1>><br>
+        <img src="images/마찌.jpg" width="300"> <strong>프로그래머</strong>를 꿈꾸는 마찌
+
+        <h3>학습 중인 과목</h3>
+        <ul>
+            <li>JAVA</li>
+            <li>Oracle</li>
+            <li>HTML </li>
+        </ul>
+        <a href="http://www.w3c.org" target=_balnk>w3c 사이트</a>
+        <table border="1">
+            <caption>시간표</caption>
+            <tr>
+                <th></th>
+                <th>월요일</th>
+                <th>화요일</th>
+                <th>수요일</th>
+                <th>목요일</th>
+                <th>금요일</th>
+            </tr>
+            <tr>
+                <th>1교시</th>
+                <th>java</th>
+                <th>html</th>
+                <th>oracle</th>
+                <th>java</th>
+                <th>oracle</th>
+            </tr>
+            <tr>
+                <th>2교시</th>
+                <th>java</th>
+                <th>html</th>
+                <th>oracle</th>
+                <th>java</th>
+                <th>oracle</th>
+            </tr>
+
+        </table>
+<hr>
+
+        <!-- 오디오 -->
+        <audio controls>
+            <source src="audios/rach.ogg" type="audio/ogg">
+            <source src="audios/rach.mp3" type="audio/mp3">
+            브라우저가 오디오 파일 포맷을 지원하지 않습니다
+        </audio><hr>
+
+
+        <!-- 비디오 -->
+        <video autoplay controls src="videos/mat.mp4">
+            브라우저가 video 파일 포맷을 지원하지 않습니다
+        </video>
+
+
+       
+     </body>
+
+</html>

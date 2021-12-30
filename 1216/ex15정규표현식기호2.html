@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+
+</head>
+
+<body>
+
+<!--     
+    <script>
+        var regExp = /^j/igm;
+        var string = "Javascript\njQuery\nAjax";
+        var output = string.replace(regExp, '+$&+');
+        alert(output);
+    </script> -->
+
+
+    <script>
+        function checkForm(){
+            var str = document.frm.name.value;
+            var regExp = /^[a-z|A-Z|ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;    // |=or
+            if(!regExp.test(str)){
+                alert("이름을 숫자로 시작할 수 없음!");
+                return;
+            }else{alert("안녕 나는 " + str + "! 반가워")}
+        }
+    </script>
+
+
+    <form name="frm">
+        <p>이름 : <input type="text" name="name">
+        <p><input type="button" value="전송" lo onclick="checkForm()">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Date 객체 1 -->
+    <p id="d1"></p>
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
+
+    <script>
+        //기본 생성자
+        document.getElementById("d1").innerHTML = new Date();
+        //1970.07.07 이후의 밀리초 계산
+        document.getElementById("d2").innerHTML = new Date(1491803527400);
+        //문자열 날짜
+        document.getElementById("d3").innerHTML = new Date("October 15,2018 06:18:07");
+        //주의사항 : 월(month)은 0부터 시작
+        //날짜 지정
+        document.getElementById("d4").innerHTML = new Date(2018, 11, 25, 18, 30, 29);
+    </script>
+
+
+    <!-- Date 객체 3 -->
+    <div id="digClock"></div>
+    <script>
+        function digColock(){
+            var today = new Date();
+            var day =today.getFullYear() + "년" +  today.getMonth()+1 + "월" + today.getDate() + "일";
+            var time = today.getHours() + "시" + today.getMinutes() + "분" + today.getSeconds() + "초";
+            document.getElementById("digClock").innerHTML=day+ time;
+            setTimeout('digColock()',1000);
+        }
+        digColock();
+    </script>
+</body>
+
+</html>

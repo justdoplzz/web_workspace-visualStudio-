@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.js"></script>
+</head>
+
+<!-- 제이쿼리 이벤트  -->
+
+<body>
+    <p>메시지 : 내 이름은 코난. 탐정이죠.</p>
+    <button class="hide">메시지 삭제</button>
+    <button class="show">메시지 보기</button>
+    <script>
+        $(document).ready(function () {
+            $("button.hide").click(function () {
+                $("p").hide();
+            });
+            $("button.show").click(function () {
+                $("p").show();
+            });
+        });
+    </script>
+</body>
+
+</html>

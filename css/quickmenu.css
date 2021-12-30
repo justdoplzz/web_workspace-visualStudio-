@@ -1,0 +1,46 @@
+
+/* quickMenu */
+.icon-box{
+    
+    border-color: white;
+    background-color: rgb(218, 216, 216);
+    width: 320px; height: 200px;
+    padding: 0px 0px 10px;
+    border-radius: 10px;
+}
+
+.fds>.icon-box{
+    float: right;
+}
+
+
+.title-01{
+    clear: both;
+    border: 1px solid #f1f1f1;
+    margin: 30px 30px 30px 30px; 
+    width: 240px;
+    height: 40px;
+    border-radius: 10px;
+}
+.site-font-color{
+    font-weight: bold;
+    line-height: 40px;
+    color: #f76e05;
+    
+}
+.icon-bar{
+    width: 5px;
+    height: 54px;
+    float: left;
+    
+}
+.icon-subject{
+    float: left; width: 100px; 
+}
+.icon-my{
+    float: left;  width: 100px;
+}
+.icon-faq{
+    float: left;  width: 100px;
+}
+

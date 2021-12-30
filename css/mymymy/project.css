@@ -1,0 +1,25 @@
+/* classDater */
+.tablestyle{
+    border:0;
+    width: 985px;
+}
+.tablebg{
+    background-color: #666;
+    color:white;
+    border-bottom: 1px solid black;
+}
+.tablebg2{
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+.tablebg3{
+    background-color: #ededed;
+    border-bottom: 1px solid black;
+}
+.tableP{
+    padding: 10px;
+}
+
+.box{
+    width: 500px;height: 500px; border: black;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 기본 이젠트(default event) - 특정 태그가 가진 기본적인 이벤트 -->
+    <!-- 가지고 있는 이벤트를 return false로 막는다 -->
+    <script>
+        window.onload = function () {
+            var button = document.getElementById('myLink');
+            button.onclick = function () {  //이벤트 연결
+                return false;   //기본 이벤트 제거
+            };
+        };
+    </script>
+    <a id="myLink" href="http://www.naver.com">하이퍼링크</a>
+
+    <!-- onmouseover -->
+    <script>
+        function mouseoverevent(){
+            alert("내이름은 코난. 탐정이죠");
+        }
+    </script>
+    <p onmouseover="mouseoverevent()">마우스를 여기에</p>
+
+
+    <!-- focusevent -->
+    <input type="text" id="input1" onfocus="focusevent()"/>
+    <script>
+        function focusevent(){
+            document.getElementById("input1").style.background="aqua";
+        }
+    </script>
+
+    <!-- onkeydown -->
+    <!-- ?왜 안됨? -->
+    <input type="text" id="input2" onkeydown="keydownevent()"/>
+    <script>
+        function keydownevent(){
+            document.getElementById("input2");
+            alert("키 눌림");
+        }
+    </script>
+</body>
+</html>

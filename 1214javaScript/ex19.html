@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 객체 변수를 이용하는 방법 2 -->
+    <p id="var1"></p>
+    <p id="var2"></p>
+    <p id="var3"></p>
+    <script>
+        var car = { name: 'Sonata', spped: 100, color: 'white' };
+        document.getElementById("var1").innerHTML = "자동차 이름 : " + car['name'];
+        document.getElementById("var2").innerHTML = "자동차 속도 : " + car.spped;
+        document.getElementById("var3").innerHTML = "자동차 색상 : " + car.color;
+    </script>
+    <hr>
+
+    <!-- 객체 변수를 이용하는 방법 3 -->
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+    <script>
+        var obj = {
+            m1: function () {
+                return "Hello Sonata";
+            },
+            m2: function (a) {
+                var result = a;
+                return result;
+            }, m3: function (a, b) {
+                var result = a + b;
+                return result;
+            }
+        };
+        document.getElementById("msg1").innerHTML = obj.m1();
+        document.getElementById("msg2").innerHTML = obj.m2(100);
+        document.getElementById("msg3").innerHTML = obj.m3(100, 200);
+    </script>
+    <hr>
+
+    <!-- textContent 로 사용하면 이렇게! -->
+    <!-- <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+    <script>
+        var obj = {
+            m1: function () {
+                return "Hello Sonata";
+            },
+            m2: function (a) {
+                var result = a;
+                return result;
+            }, m3: function (a, b) {
+                var result = a + b;
+                return result;
+            }
+        };
+
+        var msg1 = document.getElementById("msg1");
+        msg1.textContent = obj.m1();
+        var msg2 = document.getElementById("msg2");
+        msg2.textContent = obj.m2(200);
+        var msg3 = document.getElementById("msg3");
+        msg3.textContent = obj.m3(100, 200);
+    </script> -->
+
+
+    <!-- 객체 변수를 이용하는 방법 5 -->
+    <p id="upspeed"></p>
+    <p id="downspeed"></p>
+    <script>
+        var car = {
+            name: 'Sonata',
+            speed: 50,
+            color: 'white',
+            speedup: function () {
+                return this.speed + 10;
+            },
+            speeddown: function () {
+                var low = this.speed - 10;
+                return low;
+            }
+        };
+        var upspeed = document.getElementById("upspeed");
+        upspeed.textContent = '속도증가: ' + car.speedup();
+        var downspeed = document.getElementById("downspeed");
+        downspeed.textContent = '속도감소 : ' + car.speeddown();
+    </script>
+</body>
+
+</html>

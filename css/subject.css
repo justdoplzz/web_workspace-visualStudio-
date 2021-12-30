@@ -1,0 +1,88 @@
+/* 
+div = first-box
+ol = sub
+li = term_info, ll
+span = ttt
+*/
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+    padding:0;
+    margin: 0 4px 0 4px;
+}
+
+.sub {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.first-box{
+    border:0px;
+    overflow:hidden;
+    margin: 20px 0px 5px 0px;
+    overflow: hidden;
+    clear: both;
+    line-height: 23px;
+}
+
+.subject > .bar {
+    float: left;
+    height: 17px;
+    width: 4px;
+    overflow: hidden;
+    margin-right: 8px;
+    margin-top: 3px;
+}
+
+.site-background-color{
+    background-color: #3B6695 !important;
+}
+
+.first-box>.title-01>.ttt {
+    font-size:50px;
+    font-weight:bold;
+    float:left;
+}
+.first-box>.sub{
+    padding:0 0px 0px 0px;
+    overflow:hidden;
+}
+
+.first-box>.sub>.ll{
+    padding: 5px 0px 5px 0px;
+    clear: both;
+    overflow: hidden;
+}
+.first-box>.sub>.term_info{
+    padding: 5px 0px 5px 0px;
+    clear: both;
+    overflow: hidden;
+}
+
+.first-box>.ttt{
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+}
+
+.first-box > .sub > .ll > .ttt {
+    color: #9c9c9c;
+    letter-spacing: 0px;
+    float: right;
+    font-size: 95%;
+    margin-top: -1px;
+    margin-right: 3px;
+}
+
+.term_info{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 12px;
+    color: #ff770b;
+}

@@ -1,0 +1,67 @@
+/*개인정보*/
+
+
+.toptitle{
+    color: #666;
+    font-size: 21px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    overflow: hidden;
+    line-height: 25px;
+    border-bottom: 1px solid #dadada;
+}
+.box {
+    margin: 10px 0 10px 0;
+    width: 93%;
+    
+    padding: 5px 2px 3px 2px;
+    line-height: 23px;
+}
+body{
+    position: relative;
+    font-size: 0.75em;
+    color: #666;
+}
+#content_Text{
+    width: 738px;
+    margin: 20px 0 90px 0;
+    position: relative;
+    border: 1px solid #dadada;
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table{
+    width: 100%;
+    margin: 0px 0 0px 0;
+    padding: 10px 0 10px 20px;
+    border: 1px solid #dadada;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+}
+div > td{
+    height: 80px;
+    vertical-align: middle;
+    font-weight: bold;
+
+}
+
+.site_button{
+    margin-bottom: 5px !important;
+    color: #444;
+    background-color: #f7f7f7;
+    display: inline-block;
+    min-width: 60px;
+    text-align: center;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+        box-shadow: 0px 1px 2px 0px rgb(0 0 0 / 10%);
+    cursor: pointer;
+    user-select: none;
+}
