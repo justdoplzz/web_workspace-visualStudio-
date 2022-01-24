@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>광역시 대기오염 실시간 평균정보</h1>
+    <p>측정항목 :CO/시간평균(일주일)</p>
+   <table>
+       <tr>
+           <td>
+
+           </td>
+       </tr>
+   </table>
+    <script>
+        window.onload=function(){
+            var request =new XMLHttpRequest();
+            request.onreadystatechange= function(){
+                if(request.readyState == 4 && request.status ==200){
+                    var parser = new DOMParser();
+                    var xml = parser.parseFromString(request.responseText, 'application/xml');
+                    var daegu = xml.getElementsByTagName('daegu');
+                    var incheon= xml.getElementsByTagName("incheon");
+                    var gwangju = xml.getElementsByTagName('gwangju');
+                    var ulsan = xml.getElementsByTagName('ulsan');
+                    var seoul = xml.getElementsByTagName('seoul');
+                    var busan = xml.getElementsByTagName('busan');
+                }
+                for(var i =0; i<seoul.length; i++){
+                    var daegu2 = daegu[i].textContent;
+                    var incheon2 = incheon[i].textContent;
+                    var gwangju2 = coValue[i].textContent;
+                    var ulsan2 = coValue[i].textContent;
+                    var seoul2 = coValue[i].textContent;
+                    var busan2 = coValue[i].textContent;
+
+                    document.body.innerHTML += '<p>' + sidoName + ','+coValue +'</p>';
+                    
+                }
+            }
+        request.open("get", "http://apis.data.go.kr/B552584/ArpltnStatsSvc/getCtprvnMesureSidoLIst?serviceKey=ox6YRNg%2BMy%2BIYSFPAPQSNdmmfL1FKWWYFZCalvqevMTR1QxyJ4qAbfxgER2051nGOsylyZAwObHo2coeyMjyIQ%3D%3D", true);
+        request.send();
+        }
+
+        
+    </script>
+</body>
+</html>

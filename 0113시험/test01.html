@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #backColor{
+            background-color: #ffffff, #ff0000, #ffff00, #008000,#0000ff;
+        } */
+    </style>
+</head>
+
+<body id="backColor">
+
+    <button onclick="colorChange()">배경색 바꾸기</button>
+
+
+    <!-- <script>
+        var index = 0;
+        var colors = ["#ffffff", "#ff0000", "#ffff00", "#008000", "#0000ff"];
+
+        function colorChange() {
+            
+            document.body.style.backgroundColor = colors[index];
+            index++; 
+        }
+    </script> -->
+
+        <!-- 랜덤 -->
+        <script>
+            var num=0;
+            function colorChange() {
+                var color = [ "#ff0000", "#ffff00", "#008000", "#0000ff"];
+
+                var bodyTag = document.getElementById('backColor');
+                
+                bodyTag.style.backgroundColor = color[num%4];
+                num++;
+            }
+        </script>
+
+    <!-- 랜덤 -->
+    <!-- <script>
+        function colorChange() {
+            var color = ["#ffffff", "#ff0000", "#ffff00", "#008000", "#0000ff"];
+
+            var num = Math.floor(Math.random() * color.length);
+            var bodyTag = document.getElementById('backColor');
+            bodyTag.style.backgroundColor = color[num];
+        }
+    </script> -->
+</body>
+
+</html>
